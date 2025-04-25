@@ -1,2 +1,2 @@
 # Personal neovim colorscheme
-in the making
+in the making/unusable

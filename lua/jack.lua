@@ -31,7 +31,6 @@ JackPalette = {
 
 -- Theme: "tiger"
 
-
 -- @class Tiger
 -- @field get_colors function()
 -- @field get_groups function()
@@ -49,21 +48,21 @@ Tiger.get_colors = function()
 
 	local color_groups = {
 		dark = {
-				bg0 = p.dark_hard,
-        bg1 = p.dark_hard,
-        bg2 = p.dark_hard,
-        bg3 = p.dark_hard,
-        bg4 = p.dark_hard,
-        fg0 = p.light_hard,
-        fg1 = p.light_hard,
-        fg2 = p.light_hard,
-        fg3 = p.light_hard,
-        fg4 = p.light_hard,
-        dark_red = p.dark_hard,
-        dark_green = p.dark_hard,
-        dark_aqua = p.dark_hard,
-        gray = p.gray,
-        --[[ red = p.bright_red,
+			bg0 = p.dark_hard,
+			bg1 = p.dark_hard,
+			bg2 = p.dark_hard,
+			bg3 = p.dark_hard,
+			bg4 = p.dark_hard,
+			fg0 = p.light_hard,
+			fg1 = p.light_hard,
+			fg2 = p.light_hard,
+			fg3 = p.light_hard,
+			fg4 = p.light_hard,
+			dark_red = p.dark_hard,
+			dark_green = p.dark_hard,
+			dark_aqua = p.dark_hard,
+			gray = p.gray,
+			--[[ red = p.bright_red,
         green = p.bright_green,
         yellow = p.bright_yellow,
         blue = p.bright_blue,
@@ -79,26 +78,25 @@ Tiger.get_colors = function()
 ]]
 		},
 		light = {
-				bg0 = p.light_hard,
-        bg1 = p.light_hard,
-        bg2 = p.light_hard,
-        bg3 = p.light_hard,
-        bg4 = p.light_hard,
-        fg0 = p.dark_hard,
-        fg1 = p.dark_hard,
-        fg2 = p.dark_hard,
-        fg3 = p.dark_hard,
-        fg4 = p.dark_hard,
-        dark_red = p.dark_hard,
-        dark_green = p.dark_hard,
-        dark_aqua = p.dark_hard,
-        gray = p.gray,
-
+			bg0 = p.light_hard,
+			bg1 = p.light_hard,
+			bg2 = p.light_hard,
+			bg3 = p.light_hard,
+			bg4 = p.light_hard,
+			fg0 = p.dark_hard,
+			fg1 = p.dark_hard,
+			fg2 = p.dark_hard,
+			fg3 = p.dark_hard,
+			fg4 = p.dark_hard,
+			dark_red = p.dark_hard,
+			dark_green = p.dark_hard,
+			dark_aqua = p.dark_hard,
+			gray = p.gray,
 		},
 	}
-	 -- TODO: contrast manipulation
+	-- TODO: contrast manipulation
 	if contrast ~= nil and contrast ~= "" then
-		 --[[ color_groups[bg].bg0 = p[bg .. "0_" .. contrast]
+		--[[ color_groups[bg].bg0 = p[bg .. "0_" .. contrast]
 		color_groups[bg].dark_red = p[bg .. "_red_" .. contrast]
 		color_groups[bg].dark_green = p[bg .. "_green_" .. contrast]
 		color_groups[bg].dark_aqua = p[bg .. "_aqua_" .. contrast] ]]
@@ -111,19 +109,15 @@ Tiger.get_groups = function()
 	local config = Jack.config
 
 	if config.terminal_colors then
-
 	end
 
-	local groups = {
-
-	}
-
+	local groups = {}
 
 	for group, hl in pairs(config.overwrites) do
 		if groups[group] then
 			groups[group].link = nil
 		end
-		groups[group] = vim.tbl_extend('force', groups[group] or {}, hl)
+		groups[group] = vim.tbl_extend("force", groups[group] or {}, hl)
 	end
 	return groups
 end
@@ -148,7 +142,7 @@ Jack.load = function(opts)
 		groups = Tiger.get_groups()
 	end
 
-	if !groups then
+	if groups == nil then
 		vim.notify_once("jack.nvim: could not retrive groups")
 		return
 	end

@@ -1,1 +1,1 @@
-lua require("jack").load({ _theme = "tiger" })
+require("jack").load({ _theme = "tiger" })
