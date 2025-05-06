@@ -5,7 +5,7 @@
 local Jack = {}
 
 --- @alias Contrast "hard" | "sorf" | ""
---- @alias Theme "tiger" |  ""
+--- @alias Theme "Jack" |  ""
 --- @class HighlightDefinition
 --- @fg string?
 --- @bg string?
@@ -134,14 +134,7 @@ Jack.palette = {
 	light_aqua_soft = "#e1dbac",
 }
 
--- Theme: "tiger"
-
--- @class Tiger
--- @field get_colors function()
--- @field get_groups function()
-local Tiger = {}
-
-Tiger.get_colors = function()
+Jack.get_colors = function()
 	local p = Jack.palette
 	-- DEV: set default missing value to white
 	setmetatable(p, {
@@ -233,8 +226,8 @@ Tiger.get_colors = function()
 	return color_groups[bg]
 end
 
-Tiger.get_groups = function()
-	local colors = Tiger.get_colors()
+Jack.get_groups = function()
+	local colors = Jack.get_colors()
 	local config = Jack.config
 
 	if config.terminal_colors then
@@ -793,9 +786,9 @@ Tiger.get_groups = function()
 		scalaTypeTypePostDeclaration = { link = "JackYellow" },
 		scalaInstanceDeclaration = { link = "JackFg1" },
 		scalaInterpolation = { link = "JackAqua" },
-		markdownItalic = { fg = colors.fg0, italic = true },
-		markdownBold = { fg = colors.fg0, bold = true },
-		markdownBoldItalic = { fg = colors.fg2, bold = true, italic = true },
+		markdownItalic = { fg = colors.fg2, italic = true },
+		markdownBold = { fg = colors.fg2, bold = config.bold },
+		markdownBoldItalic = { fg = colors.fg2, bold = config.bold, italic = true },
 		markdownH1 = { link = "JackGreenBold" },
 		markdownH2 = { link = "JackGreenBold" },
 		markdownH3 = { link = "JackYellowBold" },
@@ -1258,6 +1251,11 @@ Tiger.get_groups = function()
 	return groups
 end
 
+--- @param config JackConfig
+Jack.setup = function(config)
+	Jack.config = vim.tbl_deep_extend("force", Jack.config, config or {})
+end
+
 --- @param opts table<Theme>
 Jack.load = function(opts)
 	if vim.version().minor < 8 then
@@ -1265,17 +1263,17 @@ Jack.load = function(opts)
 		return
 	end
 
-	local theme = opts["_theme"]
 	if vim.g.colors_name then
 		vim.cmd.hi("clear")
 	end
 
-	local groups = nil
-	if theme ~= nil and theme == "tiger" then
-		vim.g.colors_name = "jack-tiger"
+	local groups = Jack.get_groups()
+	--[[ local groups = nil
+	if theme ~= nil and theme == "Jack" then
+		vim.g.colors_name = "jack-Jack"
 		vim.o.termguicolors = true
-		groups = Tiger.get_groups()
-	end
+		groups = Jack.get_groups()
+	end ]]
 
 	if groups == nil then
 		vim.notify_once("jack.nvim: could not retrive groups")
