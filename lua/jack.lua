@@ -69,81 +69,8 @@ Jack.config = {
 
 	bright_red = "#fb4934",
 ]]
---- @class JackPalette
-Jack.palette = {
-	-- TODO: remap
-	dark0 = "#161616",
-	dark0_soft = "#32302f",
-	dark1 = "#302624",
-	dark2 = "#504644",
-	dark3 = "#665c50",
-	dark4 = "#5c4f32",
-
-	light0 = "#ebe176",
-	light1 = "#b69424",
-	light2 = "#d5c440",
-	light3 = "#bdde93",
-	light4 = "#a89984",
-	gray = "#928344",
-
-	light_red = "#fc9487",
-	red = "#db4034",
-	dark_red = "#fb2529",
-	dark_red_soft = "#fb2c2f",
-	-- green = "#98971a",
-	light_green = "#859820",
-	green = "#606d18",
-	dark_green_hard = "#6a6310",
-	yellow = "#daad42",
-	dark_yellow = "#aa9220",
-
-	light_orange = "#dd8420",
-	orange = "#bd8020",
-	dark_orange = "#a8a422",
-	aqua = "#8ea016",
-	dark_aqua = "#eb7b44",
-
-	-- default gruvbox colors for compatibility
-
-	dark0_hard = "#1d2021",
-	light0_hard = "#f9f5d7",
-	light0_soft = "#f2e5bc",
-	neutral_red = "#cc241d",
-	neutral_green = "#98971a",
-	neutral_yellow = "#d79921",
-	neutral_blue = "#458588",
-	neutral_purple = "#b16286",
-	neutral_aqua = "#689d6a",
-	neutral_orange = "#d65d0e",
-	faded_red = "#9d0006",
-	faded_green = "#79740e",
-	faded_yellow = "#b57614",
-	faded_blue = "#076678",
-	faded_purple = "#8f3f71",
-	faded_aqua = "#427b58",
-	faded_orange = "#af3a03",
-	dark_red_hard = "#792329",
-	light_red_hard = "#fc9690",
-	light_red_soft = "#f78b7f",
-	dark_green = "#62693e",
-	dark_green_soft = "#686d43",
-	light_green_hard = "#d3d6a5",
-	light_green_soft = "#cecb94",
-	dark_aqua_hard = "#3e4934",
-	dark_aqua_soft = "#525742",
-	light_aqua_hard = "#e6e9c1",
-	light_aqua = "#e8e5b5",
-	light_aqua_soft = "#e1dbac",
-}
 
 Jack.get_colors = function()
-	local p = Jack.palette
-	-- DEV: set default missing value to blue
-	setmetatable(p, {
-		__index = function()
-			return "#0000ff"
-		end,
-	})
 	local config = Jack.config
 
 	for color, hex in pairs(config.palette_overwrites) do
@@ -154,73 +81,76 @@ Jack.get_colors = function()
 
 	local color_groups = {
 		dark = {
-			bg0 = p.dark0,
-			bg1 = p.dark1,
-			bg2 = p.dark2,
-			-- ?
-			bg3 = p.dark3,
-			bg4 = p.dark4,
-			fg0 = p.light0,
-			fg1 = p.yellow,
-			fg2 = p.light2,
-			fg3 = p.light3,
-			fg4 = p.light4,
-			gray = p.gray,
+			bg0 = "#161616",
+			bg1 = "#302624",
+			bg2 = "#504644",
+			bg3 = "#665c50",
+			bg4 = "#5c4f32",
 
-			light_green = p.light_green,
-			green = p.green,
-			dark_green_hard = p.dark_green_hard,
-			yellow = p.yellow,
-			dark_yellow = p.dark_yellow,
-			light_orange = p.light_orange,
-			orange = p.orange,
-			dark_orange = p.dark_orange,
-			aqua = p.aqua,
-			light_red = p.light_red,
-			red = p.red,
+			fg0 = "#ebe176",
+			fg1 = "#daad42",
+			fg2 = "#d5c440",
+			fg3 = "#bdde93",
+			fg4 = "#a89984",
+			gray = "#928344",
+
+			light_red = "#fc9487",
+			red = "#db4034",
+			light_green = "#859820",
+			green = "#606d18",
+			dark_green_hard = "#6a6310",
+			yellow = "#daad42",
+			dark_yellow = "#aa9220",
+			light_orange = "#dd8420",
+			orange = "#bd8020",
+			dark_orange = "#a8a422",
+			aqua = "#8ea016",
+			dark_aqua = "#eb7b44",
 
 			-- using default gruvbox colors
-			neutral_red = p.neutral_red,
-			neutral_green = p.neutral_green,
-			neutral_yellow = p.neutral_yellow,
-			neutral_blue = p.neutral_blue,
-			neutral_purple = p.neutral_purple,
-			neutral_aqua = p.neutral_aqua,
-			dark_red = p.dark_red,
-			dark_green = p.dark_green,
-			dark_aqua = p.dark_aqua,
+			neutral_green = "#98971a",
+			neutral_yellow = "#d79921",
+			neutral_blue = "#458588",
+			neutral_purple = "#b16286",
+			neutral_aqua = "#689d6a",
+			neutral_orange = "#d65d0e",
+			dark_green = "#62693e",
+			dark_red = "#fb2529",
+			dark_aqua = "#eb7b44",
 		},
 		light = {
-			bg0 = p.light0,
-			bg1 = p.light1,
-			bg2 = p.light2,
-			bg3 = p.light3,
-			bg4 = p.light4,
-			fg0 = p.dark0,
-			fg1 = p.dark1,
-			fg2 = p.dark2,
-			fg3 = p.dark3,
-			fg4 = p.dark4,
-			gray = p.gray,
+			bg0 = "#dad276",
+			--bg1 = "#b69424",
+			bg1 = "#a6a434",
+			bg2 = "#a6a434",
+			bg3 = "#a6a434",
+			bg4 = "#a89984",
+			fg0 = "#1616ff",
+			fg1 = "#202020",
+			fg2 = "#5046ff",
+			fg3 = "#866c40",
+			fg4 = "#5c4f32",
+			gray = "#424222",
 
-			green = p.green,
-			yellow = p.yellow,
-			aqua = p.aqua,
-			red = p.red,
-			light_orange = p.light_orange,
-			orange = p.orange,
-			dark_orange = p.dark_orange,
+			green = "#505d18",
+			yellow = "#424222",
+			aqua = "#424f10",
+			red = "#9b2c2f",
+			light_orange = "#202020",
+			orange = "#2b4412",
+			dark_orange = "#202020",
 
 			-- using default gruvbox colors
-			neutral_red = p.neutral_red,
-			neutral_green = p.neutral_green,
-			neutral_yellow = p.neutral_yellow,
-			neutral_blue = p.neutral_blue,
-			neutral_purple = p.neutral_purple,
-			neutral_aqua = p.neutral_aqua,
-			dark_red = p.dark_red,
-			dark_green = p.dark_green,
-			dark_aqua = p.dark_aqua,
+			neutral_red = "#cc241d",
+			neutral_green = "#98971a",
+			neutral_yellow = "#d79921",
+			neutral_blue = "#458588",
+			neutral_purple = "#b16286",
+			neutral_aqua = "#689d6a",
+			neutral_orange = "#d65d0e",
+			dark_red = "#fb2529",
+			dark_green = "#6a6310",
+			dark_aqua = "#eb7b44",
 		},
 	}
 	-- TODO: contrast manipulation
@@ -341,7 +271,7 @@ Jack.get_groups = function()
 		Folded = { fg = colors.gray, bg = colors.bg1, italic = config.italic_folds },
 		FoldColumn = config.transparent_mode and { fg = colors.gray, bg = nil }
 			or { fg = colors.gray, bg = colors.bg1 },
-		Cursor = { reverse = config.inverse },
+		Cursor = { fg = "#0000ff", bg = "#FF0000", reverse = config.inverse },
 		vCursor = { link = "Cursor" },
 		iCursor = { link = "Cursor" },
 		lCursor = { link = "Cursor" },
@@ -1285,6 +1215,7 @@ Jack.load = function()
 
 	vim.g.colors_name = "jack"
 	vim.o.termguicolors = true
+
 	groups = Jack.get_groups()
 
 	if groups == nil then
@@ -1296,5 +1227,15 @@ Jack.load = function()
 		vim.api.nvim_set_hl(0, group, settings)
 	end
 end
+
+vim.opt.guicursor = "a:block-dCursor,i:block-iCursor,v:block-vCursor,c-ci-cr:block-cCursor,r:block-rCursor"
+
+-- force nvim to reset colors on exit
+-- to solve compatibility bug in st terminal
+-- requires and assumes $TERM=xterm-256color
+vim.api.nvim_create_autocmd("VimLeave", {
+	pattern = "*",
+	command = "set guicursor=a:dCursor",
+})
 
 return Jack
