@@ -13,4 +13,4 @@
 [ ] test black theme in python
 
 ## Exporting
-[ ] write proper README
+[x] write proper README
