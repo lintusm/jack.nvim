@@ -1,6 +1,6 @@
 # TODO
 
-## Function
+## Internal
 [x] define color palettes
 [ ] soy/white theme
 
@@ -11,6 +11,10 @@
 [ ] test black theme in go
 [x] test black theme in zig
 [ ] test black theme in python
+[ ] test black theme in odin
+
+[ ] simplify color map
 
 ## Exporting
 [x] write proper README
+[ ] make manual export

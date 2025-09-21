@@ -3,10 +3,10 @@ A Basic Nvim color scheme with little blue color to
 further my quest of purging blue light of my software
 
 ## light
-![light theme](_light-bg.png)
+![light theme](_light.png)
 
 ## dark
-![dark theme](_dark-bg.png)
+![dark theme](_dark.png)
 
 # Installation
 ## Lazy.nvim

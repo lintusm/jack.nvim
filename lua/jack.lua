@@ -120,7 +120,6 @@ Jack.get_colors = function()
 		},
 		light = {
 			bg0 = "#dad276",
-			--bg1 = "#b69424",
 			bg1 = "#a6a434",
 			bg2 = "#a6a434",
 			bg3 = "#a6a434",
@@ -252,7 +251,7 @@ Jack.get_groups = function()
 		CurSearch = { link = "IncSearch" },
 		QuickFixLine = { link = "JackDarkOrange" },
 		Underlined = { fg = colors.light_orange, underline = config.underline },
-		StatusLine = { fg = colors.fg1, bg = colors.bg2 },
+		StatusLine = { fg = colors.fg1, bg = NONE },
 		StatusLineNC = { fg = colors.fg4, bg = colors.bg1 },
 		WinBar = { fg = colors.fg4, bg = colors.bg0 },
 		WinBarNC = { fg = colors.fg3, bg = colors.bg1 },
