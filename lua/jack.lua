@@ -209,19 +209,19 @@ Jack.get_groups = function()
 		JackAquaBold = { fg = colors.aqua, bold = config.bold },
 
 		JackRedSign = config.transparent_mode and { fg = colors.red, reverse = config.invert_signs }
-			or { fg = colors.red, bg = colors.bg1, reverse = config.invert_signs },
+				or { fg = colors.red, bg = colors.bg1, reverse = config.invert_signs },
 		JackGreenSign = config.transparent_mode and { fg = colors.green, reverse = config.invert_signs }
-			or { fg = colors.green, bg = colors.bg1, reverse = config.invert_signs },
+				or { fg = colors.green, bg = colors.bg1, reverse = config.invert_signs },
 		JackYellowSign = config.transparent_mode and { fg = colors.yellow, reverse = config.invert_signs }
-			or { fg = colors.yellow, bg = colors.bg1, reverse = config.invert_signs },
+				or { fg = colors.yellow, bg = colors.bg1, reverse = config.invert_signs },
 		JackOrangeSign = config.transparent_mode and { fg = colors.light_orange, reverse = config.invert_signs }
-			or { fg = colors.light_orange, bg = colors.bg1, reverse = config.invert_signs },
+				or { fg = colors.light_orange, bg = colors.bg1, reverse = config.invert_signs },
 		JackDarkOrangeSign = config.transparent_mode and { fg = colors.purple, reverse = config.invert_signs }
-			or { fg = colors.purple, bg = colors.bg1, reverse = config.invert_signs },
+				or { fg = colors.purple, bg = colors.bg1, reverse = config.invert_signs },
 		JackAquaSign = config.transparent_mode and { fg = colors.aqua, reverse = config.invert_signs }
-			or { fg = colors.aqua, bg = colors.bg1, reverse = config.invert_signs },
+				or { fg = colors.aqua, bg = colors.bg1, reverse = config.invert_signs },
 		JackOrangeSign = config.transparent_mode and { fg = colors.orange, reverse = config.invert_signs }
-			or { fg = colors.orange, bg = colors.bg1, reverse = config.invert_signs },
+				or { fg = colors.orange, bg = colors.bg1, reverse = config.invert_signs },
 		JackRedUnderline = { undercurl = config.undercurl, sp = colors.red },
 		JackGreenUnderline = { undercurl = config.undercurl, sp = colors.green },
 		JackYellowUnderline = { undercurl = config.undercurl, sp = colors.yellow },
@@ -256,7 +256,7 @@ Jack.get_groups = function()
 		WinBar = { fg = colors.fg4, bg = colors.bg0 },
 		WinBarNC = { fg = colors.fg3, bg = colors.bg1 },
 		WinSeparator = config.transparent_mode and { fg = colors.bg3, bg = nil }
-			or { fg = colors.bg3, bg = colors.bg0 },
+				or { fg = colors.bg3, bg = colors.bg0 },
 		WildMenu = { fg = colors.light_orange, bg = colors.bg2, bold = config.bold },
 		Directory = { link = "JackGreenBold" },
 		Title = { link = "JackGreenBold" },
@@ -269,7 +269,7 @@ Jack.get_groups = function()
 		SignColumn = config.transparent_mode and { bg = nil } or { bg = colors.bg0 },
 		Folded = { fg = colors.gray, bg = colors.bg1, italic = config.italic_folds },
 		FoldColumn = config.transparent_mode and { fg = colors.gray, bg = nil }
-			or { fg = colors.gray, bg = colors.bg1 },
+				or { fg = colors.gray, bg = colors.bg1 },
 		Cursor = { fg = "#0000ff", bg = "#FF0000", reverse = config.inverse },
 		vCursor = { link = "Cursor" },
 		iCursor = { link = "Cursor" },
