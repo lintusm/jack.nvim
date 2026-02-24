@@ -1,6 +1,6 @@
 # Introduction
 A Basic Nvim color scheme with little blue color to
-further my quest of purging blue light of my software
+further my quest of purging blue light of my system
 
 ## light
 ![light theme](_light.png)
@@ -17,9 +17,6 @@ require('lazy').setup({
       priority = 1000,
     },
 })
-```
-# Usage
-```
 -- set color scheme
 vim.o.colorscheme = 'jack'
 -- set background

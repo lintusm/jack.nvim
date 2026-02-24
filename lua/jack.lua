@@ -1207,10 +1207,9 @@ Jack.load = function()
 		vim.notify_once("jack.nvim: requires neovim version 0.8 or higher")
 		return
 	end
-
-	if vim.g.colors_name then
-		vim.cmd.hi("clear")
-	end
+	-- if vim.g.colors_name then
+	-- 	vim.cmd.hi("clear")
+	-- end
 
 	vim.g.colors_name = "jack"
 	vim.o.termguicolors = true
