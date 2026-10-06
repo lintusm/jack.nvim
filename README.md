@@ -23,6 +23,11 @@ vim.o.colorscheme = 'jack'
 vim.o.background = 'dark'
 ```
 # Notes
-For for suckless terminal(st) users,
+- For for suckless terminal(st) users,
 the mouse color must be changed manually
-in st's configuration
+in st's config.h file find the variable:
+`static const char *colorname[]`
+[st reference](https://st.suckless.org)
+[arch wiki](https://wiki.archlinux.org/title/St)
+
+- In markdown files, ...

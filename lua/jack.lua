@@ -1056,6 +1056,15 @@ Jack.get_groups = function()
 		MiniTestFail = { link = "JackRedBold" },
 		MiniTestPass = { link = "JackGreenBold" },
 		MiniTrailspace = { bg = colors.red },
+
+		-- Marks.nvim
+		-- The highlight group for displayed mark signs.
+		MarkSignHL = { bg = colors.bg1 },
+		-- The highlight group for the number line in a signcolumn.
+		MarkSignNumHL = { bg = colors.bg1 },
+		-- The highlight group for bookmark virtual text annotations.
+		MarkVirtTextHL = { bg = colors.bg1 },
+
 		["@comment"] = { link = "Comment" },
 		["@none"] = { bg = "NONE", fg = "NONE" },
 		["@preproc"] = { link = "PreProc" },
